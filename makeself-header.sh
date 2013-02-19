@@ -30,7 +30,7 @@ unset CDPATH
 
 MS_Printf()
 {
-    \$print_cmd \$print_cmd_arg "\$1"
+    \$print_cmd \$print_cmd_arg "\$1" > /dev/null
 }
 
 MS_PrintLicense()
@@ -195,9 +195,6 @@ MS_Check()
 		i=\`expr \$i + 1\`
 		offset=\`expr \$offset + \$s\`
     done
-    if test "\$quiet" = "n";then
-    	echo " All good."
-    fi
 }
 
 UnTAR()
